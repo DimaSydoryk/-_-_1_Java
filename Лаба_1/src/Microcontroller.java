@@ -34,7 +34,7 @@ public class Microcontroller {
 			this.taktova_Chastota = taktova_Chastota;
 		}		
 		public String toString(){
-			return "Мікроконтроллер фірми - " + this.company_Creator + ", створений у " + this.yearOfCreate + "із тактовою частотою: " + this.taktova_Chastota + "Мгц ,і розрядністю " + this.rozriadnist + ". Термін придатності даного котроллера " + Microcontroller.expirationDate + " Років";
+			return "Мікроконтроллер фірми - " + this.company_Creator + ", створений у " + this.yearOfCreate + " із тактовою частотою: " + this.taktova_Chastota + "Мгц , і розрядністю " + this.rozriadnist + ". Термін придатності даного котроллера " + Microcontroller.expirationDate + " Років. ";
 		}
 		public void printStaticExpirationDate() {
 			System.out.print("Термін придатності - " + Microcontroller.expirationDate + " років.");
