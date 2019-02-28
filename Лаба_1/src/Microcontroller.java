@@ -36,11 +36,11 @@ public class Microcontroller {
 		public String toString(){
 			return "Мікроконтроллер фірми - " + this.company_Creator + ", створений у " + this.yearOfCreate + "із тактовою частотою: " + this.taktova_Chastota + "Мгц ,і розрядністю " + this.rozriadnist + ". Термін придатності даного котроллера " + Microcontroller.expirationDate + " Років";
 		}
-		public String printStaticExpirationDate() {
-			return "Термін придатності - " + Microcontroller.expirationDate + " років.";
+		public void printStaticExpirationDate() {
+			System.out.print("Термін придатності - " + Microcontroller.expirationDate + " років.");
 		}
-		public String printExpirationDate() {
-			return Integer.toString(Microcontroller.expirationDate);
+		public void printExpirationDate() {
+			System.out.print(Integer.toString(Microcontroller.expirationDate));
 		}
 		public void ResetValues(int yearOfCreate, int expirationDate, String fullName, String name, int rozriadnist, int taktova_Chastota) {
 			this.yearOfCreate = yearOfCreate;
