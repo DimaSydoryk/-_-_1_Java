@@ -36,11 +36,11 @@ public class Microcontroller {
 		public String toString(String company_Creator, int rozriadnist, int taktova_Chastota,int expirationDate, int yearOfCreate){
 			return "Мікроконтроллер фірми - " + company_Creator + ", створений у " + yearOfCreate + "із тактовою частотою: " + taktova_Chastota + "Мгц ,і розрядністю " + rozriadnist + ". Термін придатності даного котроллера " + expirationDate + " Років";
 		}
-		public String printStaticExpirationDate(int expirationDate) {
-			return "Термін придатності - " + expirationDate + " років.";
+		public String printStaticExpirationDate() {
+			return "Термін придатності - " + this.expirationDate + " років.";
 		}
-		public String printExpirationDate(int expirationDate) {
-			return Integer.toString(expirationDate);
+		public String printExpirationDate() {
+			return Integer.toString(this.expirationDate);
 		}
 		public void ResetValues(int yearOfCreate, int expirationDate, String fullName, String name, int rozriadnist, int taktova_Chastota) {
 			this.yearOfCreate = yearOfCreate;
@@ -50,4 +50,14 @@ public class Microcontroller {
 			this.rozriadnist = rozriadnist;
 			this.taktova_Chastota = taktova_Chastota;
 		}
+		public static void main(String[] args) {
+			Microcontroller NewController = new Microcontroller();
+			NewController.ResetValues(1990, 10, "Dell NewController from 1990 year", "dell", 64, 8064);
+			Microcontroller secondController = new Microcontroller(1975, 15, "new Controller from Second constructor", "HP");
+			Microcontroller thirdController = new Microcontroller(1975, 15, "new Controller from Second constructor", "HP", 64, 8064);
+			secondController.toString();
+			thirdController.printStaticExpirationDate();
+			secondController.printStaticExpirationDate();
+		}
 }
+
