@@ -24,7 +24,7 @@ public class Microcontroller {
 		}
 		Microcontroller(int yearOfCreate, int expirationDate, String fullName, String name) {
 			this.yearOfCreate = yearOfCreate;
-			this.expirationDate = expirationDate;
+			Microcontroller.expirationDate = expirationDate;
 			this.fullName = fullName;
 			this.name = name;
 		}
@@ -33,18 +33,18 @@ public class Microcontroller {
 			this.rozriadnist = rozriadnist;
 			this.taktova_Chastota = taktova_Chastota;
 		}		
-		public String toString(String company_Creator, int rozriadnist, int taktova_Chastota,int expirationDate, int yearOfCreate){
-			return "Мікроконтроллер фірми - " + company_Creator + ", створений у " + yearOfCreate + "із тактовою частотою: " + taktova_Chastota + "Мгц ,і розрядністю " + rozriadnist + ". Термін придатності даного котроллера " + expirationDate + " Років";
+		public String toString(){
+			return "Мікроконтроллер фірми - " + this.company_Creator + ", створений у " + this.yearOfCreate + "із тактовою частотою: " + this.taktova_Chastota + "Мгц ,і розрядністю " + this.rozriadnist + ". Термін придатності даного котроллера " + Microcontroller.expirationDate + " Років";
 		}
 		public String printStaticExpirationDate() {
-			return "Термін придатності - " + this.expirationDate + " років.";
+			return "Термін придатності - " + Microcontroller.expirationDate + " років.";
 		}
 		public String printExpirationDate() {
-			return Integer.toString(this.expirationDate);
+			return Integer.toString(Microcontroller.expirationDate);
 		}
 		public void ResetValues(int yearOfCreate, int expirationDate, String fullName, String name, int rozriadnist, int taktova_Chastota) {
 			this.yearOfCreate = yearOfCreate;
-			this.expirationDate = expirationDate;
+			Microcontroller.expirationDate = expirationDate;
 			this.fullName = fullName;
 			this.name = name;
 			this.rozriadnist = rozriadnist;
@@ -55,7 +55,7 @@ public class Microcontroller {
 			NewController.ResetValues(1990, 10, "Dell NewController from 1990 year", "dell", 64, 8064);
 			Microcontroller secondController = new Microcontroller(1975, 15, "new Controller from Second constructor", "HP");
 			Microcontroller thirdController = new Microcontroller(1975, 15, "new Controller from Second constructor", "HP", 64, 8064);
-			secondController.toString();
+			System.out.print(secondController.toString());
 			thirdController.printStaticExpirationDate();
 			secondController.printStaticExpirationDate();
 		}
